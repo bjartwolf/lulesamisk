@@ -3,7 +3,22 @@
 open System
 
 type LanguageCode = Languagecode of string
-type IsoLanguageCode = ISO_639_3 of string
+
+module IsoLanguageCodes = 
+    type IsoLanguageCode = private ISO_639_3 of string
+    let create str = 
+        if String.IsNullOrEmpty(str) then
+            None
+        elif String.length str = 3 then
+            None
+        else
+            Some (ISO_639_3 str)
+
+    let value (ISO_639_3 str) = str
+
+
+
+open IsoLanguageCodes
 
 type Subtitles = Language of LanguageCode
 [<EntryPoint>]

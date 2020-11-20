@@ -18,10 +18,9 @@ module IsoLanguageCodes =
 
 
 
-open IsoLanguageCodes
 
 type Subtitles = Language of LanguageCode
 [<EntryPoint>]
 let main argv =
-    printfn "%A" (ISO_639_3 "norsk")
+    printfn "%A" (IsoLanguageCodes.create "norsk")
     0 // return an integer exit code

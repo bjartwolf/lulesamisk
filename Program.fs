@@ -22,5 +22,8 @@ module IsoLanguageCodes =
 type Subtitles = Language of LanguageCode
 [<EntryPoint>]
 let main argv =
-    printfn "%s" (IsoLanguageCodes.create "norsk")
+    let languageCode = IsoLanguageCodes.create "norsk"
+    match languageCode with
+        | Some lang -> printfn "%s" (IsoLanguageCodes.value lang)
+        | None -> failwith "No code" 
     0 // return an integer exit code

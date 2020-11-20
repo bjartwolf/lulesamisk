@@ -2,10 +2,11 @@
 
 open System
 
-type LanguageCode = LanguageCode of string
+type LanguageCode = Languagecode of string
+type IsoLanguageCode = ISO_639_3 of string
 
 type Subtitles = Language of LanguageCode
 [<EntryPoint>]
 let main argv =
-    printfn "%A" (LanguageCode "norsk")
+    printfn "%A" (ISO_639_3 "norsk")
     0 // return an integer exit code

@@ -25,5 +25,5 @@ let main argv =
     let languageCode = IsoLanguageCodes.create "norsk"
     match languageCode with
         | Some lang -> printfn "%s" (IsoLanguageCodes.value lang)
-        | None -> failwith "No code" 
+        | None -> failwith "No valid language code" 
     0 // return an integer exit code

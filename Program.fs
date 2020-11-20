@@ -10,9 +10,9 @@ module IsoLanguageCodes =
         if String.IsNullOrEmpty(str) then
             None
         elif String.length str = 3 then
-            None
-        else
             Some (ISO_639_3 str)
+        else
+            None 
 
     let value (ISO_639_3 str) = str
 
